@@ -10,14 +10,28 @@
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script>
+        // Highlight the current active link
         let currentlink = window.location.href;
-        let link = document.querySelectorAll("nav-link");
+        let links = document.querySelectorAll(".nav-link");
 
-        link.forEach(a => {
-            if (a.href === currentlink) {
-                a.classList.add("active");
+        links.forEach(link => {
+            if (link.href === currentlink) {
+                link.classList.add("active");
             }
         });
+
+        // Dropdown functionality
+        let flag = 0;
+        function showDropDown() {
+            const dropdown = document.querySelector(".drop-down");
+            if (flag === 0) {
+                dropdown.classList.add("show");
+                flag = 1;
+            } else {
+                dropdown.classList.remove("show");
+                flag = 0;
+            }
+        }
     </script>
 </head>
 
@@ -30,22 +44,170 @@
             </a>
             <div class="Nav-content">
                 <ul class="Nav-list">
-                    <li class="Nav-item active"><a class="nav-link" href="#">Home</a></li>
+                    <li class="Nav-item"><a class="nav-link active" href="#">Home</a></li>
                     <li class="Nav-item"><a class="nav-link" href="#">About us</a></li>
-                    <li class="Nav-item"><a class="nav-link dropdown-show" href="#">Services <i
+                    <li class="Nav-item"><a class="nav-link dropdown-show" href="#" onclick="showDropDown()">Services <i
                                 class="fa-solid fa-caret-down"></i>
                         </a>
-                        <!-- <div class="drop-down">
+                        <div class="drop-down">
+                            <!-- first row -->
                             <div class="service-row">
                                 <div class="service-divs">
-                                    <a href="">
+                                    <a href="" class="service-child-cont">
                                         <img src="https://techstalwarts.com/assets/images/nav_services/ai_ml.png"
-                                            alt=""> 
+                                            alt=""> AI/ML
                                     </a>
+                                    <div class="service-child-cont">
+                                        <p>
+                                            Empowering businesses with intelligent automation and data-driven insights
+                                        </p>
+                                        <a href="#"> Read more -> </a>
+                                    </div>
+                                </div>
+
+                                <div class="service-divs">
+                                    <a href="" class="service-child-cont">
+                                        <img src="https://techstalwarts.com/assets/images/nav_services/ui_ux.png"
+                                            alt=""> UI/UX Service
+                                    </a>
+                                    <div class="service-child-cont">
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+                                            reprehenderit similique reiciendis laudantium cumque perferendis neque esse
+                                            quas totam, dolore sapiente voluptate, impedit veritatis nulla? Omnis totam
+                                            dolorum ad repudiandae.
+                                        </p>
+                                        <a href="#"> Read more -> </a>
+                                    </div>
+                                </div>
+
+                                <div class="service-divs">
+                                    <a href="" class="service-child-cont">
+                                        <img src="https://techstalwarts.com/assets/images/nav_services/cloud.png"
+                                            alt=""> Cloud Computing
+                                    </a>
+                                    <div class="service-child-cont">
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+                                            reprehenderit similique reiciendis laudantium cumque perferendis neque esse
+                                            quas totam, dolore sapiente voluptate, impedit veritatis nulla? Omnis totam
+                                            dolorum ad repudiandae.
+                                        </p>
+                                        <a href="#"> Read more -> </a>
+                                    </div>
+                                </div>
+
+                                <div class="service-divs">
+                                    <a href="" class="service-child-cont">
+                                        <img src="https://techstalwarts.com/assets/images/nav_services/web.png" alt="">
+                                        Web Development
+                                    </a>
+                                    <div class="service-child-cont">
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+                                            reprehenderit similique reiciendis laudantium cumque perferendis neque esse
+                                            quas totam, dolore sapiente voluptate, impedit veritatis nulla? Omnis totam
+                                            dolorum ad repudiandae.
+                                        </p>
+                                        <a href="#"> Read more -> </a>
+                                    </div>
+                                </div>
+
+                                <div class="service-divs">
+                                    <a href="" class="service-child-cont">
+                                        <img src="https://techstalwarts.com/assets/images/nav_services/platform.png"
+                                            alt="servive-images"> Platform Development
+                                    </a>
+                                    <div class="service-child-cont">
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+                                            reprehenderit similique reiciendis laudantium cumque perferendis neque esse
+                                            quas totam, dolore sapiente voluptate, impedit veritatis nulla? Omnis totam
+                                            dolorum ad repudiandae.
+                                        </p>
+                                        <a href="#"> Read more -> </a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="service-row"></div>
-                        </div> -->
+                            <!-- second row -->
+                            <div class="service-row">
+                                <div class="service-divs">
+                                    <a href="" class="service-child-cont">
+                                        <img src="https://techstalwarts.com/assets/images/nav_services/call.png"
+                                            alt="servive-images"> Tech consultancy
+                                    </a>
+                                    <div class="service-child-cont">
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+                                            reprehenderit similique reiciendis laudantium cumque perferendis neque esse
+                                            quas totam, dolore sapiente voluptate, impedit veritatis nulla? Omnis totam
+                                            dolorum ad repudiandae.
+                                        </p>
+                                        <a href="#"> Read more -> </a>
+                                    </div>
+                                </div>
+                                <div class="service-divs">
+                                    <a href="" class="service-child-cont">
+                                        <img src="https://techstalwarts.com/assets/images/nav_services/product.png"
+                                            alt="servive-images"> Product Development
+                                    </a>
+                                    <div class="service-child-cont">
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+                                            reprehenderit similique reiciendis laudantium cumque perferendis neque esse
+                                            quas totam, dolore sapiente voluptate, impedit veritatis nulla? Omnis totam
+                                            dolorum ad repudiandae.
+                                        </p>
+                                        <a href="#"> Read more -> </a>
+                                    </div>
+                                </div>
+                                <div class="service-divs">
+                                    <a href="" class="service-child-cont">
+                                        <img src="https://techstalwarts.com/assets/images/nav_services/digitalmarketing.png"
+                                            alt="servive-images"> Digital Marketing
+                                    </a>
+                                    <div class="service-child-cont">
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+                                            reprehenderit similique reiciendis laudantium cumque perferendis neque esse
+                                            quas totam, dolore sapiente voluptate, impedit veritatis nulla? Omnis totam
+                                            dolorum ad repudiandae.
+                                        </p>
+                                        <a href="#"> Read more -> </a>
+                                    </div>
+                                </div>
+                                <div class="service-divs">
+                                    <a href="" class="service-child-cont">
+                                        <img src="https://techstalwarts.com/assets/images/nav_services/codeblock.png"
+                                            alt="servive-images"> Outsource Product Dev...
+                                    </a>
+                                    <div class="service-child-cont">
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+                                            reprehenderit similique reiciendis laudantium cumque perferendis neque esse
+                                            quas totam, dolore sapiente voluptate, impedit veritatis nulla? Omnis totam
+                                            dolorum ad repudiandae.
+                                        </p>
+                                        <a href="#"> Read more -> </a>
+                                    </div>
+                                </div>
+                                <div class="service-divs">
+                                    <a href="" class="service-child-cont">
+                                        <img src="https://techstalwarts.com/assets/images//nav_services/quality.png"
+                                            alt="servive-images"> Quality Assurance
+                                    </a>
+                                    <div class="service-child-cont">
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+                                            reprehenderit similique reiciendis laudantium cumque perferendis neque esse
+                                            quas totam, dolore sapiente voluptate, impedit veritatis nulla? Omnis totam
+                                            dolorum ad repudiandae.
+                                        </p>
+                                        <a href="#"> Read more -> </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                     <li class="Nav-item"><a class="nav-link" href="#">Products</a></li>
                     <li class="Nav-item"><a class="nav-link" href="#">Case Studies</a></li>
